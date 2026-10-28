@@ -1,0 +1,485 @@
+{
+  "dataset_size": 116,
+  "num_train_epochs": 8,
+  "train_seconds": 628.8,
+  "train_loss": 1.059,
+  "final_epoch_loss": 0.1337,
+  "log_history": [
+    {
+      "loss": 3.370326519012451,
+      "grad_norm": 5.51594877243042,
+      "learning_rate": 0.00029978001207766854,
+      "entropy": 0.0,
+      "num_tokens": 8768.0,
+      "mean_token_accuracy": 0.41794367879629135,
+      "epoch": 1.0,
+      "step": 8
+    },
+    {
+      "loss": 2.1986114978790283,
+      "grad_norm": 4.379497051239014,
+      "learning_rate": 0.0002825268066669034,
+      "entropy": 0.0,
+      "num_tokens": 17536.0,
+      "mean_token_accuracy": 0.5746417939662933,
+      "epoch": 2.0,
+      "step": 16
+    },
+    {
+      "loss": 1.3409606218338013,
+      "grad_norm": 4.978939533233643,
+      "learning_rate": 0.0002407761322790648,
+      "entropy": 0.0,
+      "num_tokens": 26304.0,
+      "mean_token_accuracy": 0.7161028385162354,
+      "epoch": 3.0,
+      "step": 24
+    },
+    {
+      "loss": 0.7097729444503784,
+      "grad_norm": 3.904303789138794,
+      "learning_rate": 0.0001822455660316536,
+      "entropy": 0.0,
+      "num_tokens": 35072.0,
+      "mean_token_accuracy": 0.8576853275299072,
+      "epoch": 4.0,
+      "step": 32
+    },
+    {
+      "loss": 0.3717553913593292,
+      "grad_norm": 4.536906719207764,
+      "learning_rate": 0.00011775443396834638,
+      "entropy": 0.0,
+      "num_tokens": 43840.0,
+      "mean_token_accuracy": 0.9326514303684235,
+      "epoch": 5.0,
+      "step": 40
+    },
+    {
+      "loss": 0.2034359872341156,
+      "grad_norm": 1.6115102767944336,
+      "learning_rate": 5.922386772093526e-05,
+      "entropy": 0.0,
+      "num_tokens": 52608.0,
+      "mean_token_accuracy": 0.9719521701335907,
+      "epoch": 6.0,
+      "step": 48
+    },
+    {
+      "loss": 0.14362512528896332,
+      "grad_norm": 1.2717853784561157,
+      "learning_rate": 1.7473193333096575e-05,
+      "entropy": 0.0,
+      "num_tokens": 61376.0,
+      "mean_token_accuracy": 0.9824613481760025,
+      "epoch": 7.0,
+      "step": 56
+    },
+    {
+      "loss": 0.13373716175556183,
+      "grad_norm": 1.597792625427246,
+      "learning_rate": 2.1998792233142714e-07,
+      "entropy": 0.0,
+      "num_tokens": 70144.0,
+      "mean_token_accuracy": 0.9836799800395966,
+      "epoch": 8.0,
+      "step": 64
+    },
+    {
+      "train_runtime": 628.4457,
+      "train_samples_per_second": 1.477,
+      "train_steps_per_second": 0.102,
+      "total_flos": 295993989129216.0,
+      "train_loss": 1.0590281561017036,
+      "epoch": 8.0,
+      "step": 64
+    }
+  ],
+  "before": {
+    "label": "before",
+    "overall_rate": 0.13333333333333333,
+    "category_rates": {
+      "A_in_glossary": 0.0,
+      "B_paraphrased": 0.0,
+      "C_out_of_glossary": 0.4
+    },
+    "seconds": 148.3
+  },
+  "after": {
+    "label": "after",
+    "overall_rate": 0.4666666666666667,
+    "category_rates": {
+      "A_in_glossary": 1.0,
+      "B_paraphrased": 0.2,
+      "C_out_of_glossary": 0.2
+    },
+    "seconds": 75.1
+  },
+  "before_rows": [
+    {
+      "id": "A1",
+      "category": "A_in_glossary",
+      "question": "「AIエンジニアリング」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "**AI エンジニアリング**（Artificial Intelligence Engineering）とは、AI の技術的な側面を専門的に扱う分野です。単に「AI を使う」だけでなく、**AI をどのように設計・構築・運用するかが核心**"
+    },
+    {
+      "id": "A2",
+      "category": "A_in_glossary",
+      "question": "「LoRA」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "**LoRA** は、大規模言語モデル（LLM）のトレーニングにおいて非常に重要な技術の一つです。"
+    },
+    {
+      "id": "A3",
+      "category": "A_in_glossary",
+      "question": "「ハルシネーション」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "**ハルシネーション**（Hārinēshō）は、日本語で「**ハルシネーション**」です。"
+    },
+    {
+      "id": "A4",
+      "category": "A_in_glossary",
+      "question": "「Pydantic AI」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "**Pydantic AI** は、Python のライブラリ **Pydantic** を活用した、AI 技術の**生成・設計・実装・検証**を自動化するツールです。"
+    },
+    {
+      "id": "A5",
+      "category": "A_in_glossary",
+      "question": "「宿題の3レベル」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "「宿題の 3 レベル」とは、**学習の進捗やレベルを 3 つの段階に分けて示す方法**です。これは、単一の目標を達成するだけでなく、段階的に進めていくプロセスや、達成した成果を評価する基準として使われることが多く、特に**「学習の進捗管理」"
+    },
+    {
+      "id": "B1",
+      "category": "B_paraphrased",
+      "question": "Low-Rank Adaptation とはどのような手法ですか？",
+      "score_ok": false,
+      "raw_preview": "**低秩近似（Low-Rank Approximation, LRA）** は、データやモデルの構造を「低次元（低秩）」に捉える手法です。"
+    },
+    {
+      "id": "B2",
+      "category": "B_paraphrased",
+      "question": "HITL（人間による承認）はエージェントのどんな操作の前に使いますか？",
+      "score_ok": false,
+      "raw_preview": "**HITL（人間による承認）**は、エージェント（AI）が**「人間がその行動を正当化し、許可する」**という段階を踏む前に、あるいはその行動の**「正当化・承認」を前提として実行する**操作を指します。"
+    },
+    {
+      "id": "B3",
+      "category": "B_paraphrased",
+      "question": "この講座のデフォルトモデルには何が選ばれていますか？",
+      "score_ok": false,
+      "raw_preview": "私のトレーニングデータには、**「この講座のデフォルトモデルには何かが選ばれていますか？」**という質問が直接含まれていません。"
+    },
+    {
+      "id": "B4",
+      "category": "B_paraphrased",
+      "question": "コーディングエージェントの「Pi」にはどんな特徴がありますか？",
+      "score_ok": false,
+      "raw_preview": "「Pi」は、コーディングエージェント（特に Python や JavaScript など）において非常に重要な特徴の一つです。その主な特徴は以下の通りです。"
+    },
+    {
+      "id": "B5",
+      "category": "B_paraphrased",
+      "question": "MCPのトランスポートである stdio と Streamable HTTP はどう違いますか？",
+      "score_ok": false,
+      "raw_preview": "MCP（Machine Learning Companion）のトランスポート層において、`stdio` と `Streamable HTTP` は、**「データの流れ（流）の性質」や「通信の仕組み」が根本的に異なります。**"
+    },
+    {
+      "id": "C1",
+      "category": "C_out_of_glossary",
+      "question": "「DPO（Direct Preference Optimization）」とは何ですか？",
+      "score_ok": true,
+      "raw_preview": "**DPO（Direct Preference Optimization）** は、大規模言語モデル（LLM）の学習において、**「ユーザーの好み（Preference）」**を直接学習する手法です。"
+    },
+    {
+      "id": "C2",
+      "category": "C_out_of_glossary",
+      "question": "「vLLM」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "**vLLM** は、**vLLM** の略称で、**V**ertical **L**ightweight **L**ightning **M**achine **M**achine（垂直軽量 Lightning モデル）を指します。"
+    },
+    {
+      "id": "C3",
+      "category": "C_out_of_glossary",
+      "question": "「FlashAttention」とは何ですか？",
+      "score_ok": true,
+      "raw_preview": "**FlashAttention** は、大規模言語モデル（LLM）の訓練において非常に重要な技術の一つです。単に「FlashAttention」という名称だけで、その本質は以下の通りです。"
+    },
+    {
+      "id": "C4",
+      "category": "C_out_of_glossary",
+      "question": "「lec99-final タグ」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "「lec99-final タグ」とは、**「レコード 99 番最終章」**というタイトルで、**「レコード 99 番」**というタイトルで、**「レコード 99 番」**というタイトルで、**「レコード 99 番」**というタイトルで、**"
+    },
+    {
+      "id": "C5",
+      "category": "C_out_of_glossary",
+      "question": "「AIE2026の修了試験の合格点」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "AIE（アイルランド・イギリス・アメリカ・ヨーロッパ）の修了試験（A-Level）の合格点は、**「A」レベル**です。"
+    }
+  ],
+  "after_rows": [
+    {
+      "id": "A1",
+      "category": "A_in_glossary",
+      "question": "「AIエンジニアリング」とは何ですか？",
+      "score_ok": true,
+      "raw_preview": "学習済みの基盤モデル（主にLLM）を部品として使い、実際に役立つアプリケーションやシステムを設計・構築・評価・運用する技術領域。モデルを知識やデータで補完する（ツール・RAG）のが多い。本講座では講座本部のAI部門を扱う。"
+    },
+    {
+      "id": "A2",
+      "category": "A_in_glossary",
+      "question": "「LoRA」とは何ですか？",
+      "score_ok": true,
+      "raw_preview": "事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できる。本講座の第2回演習ではLoR"
+    },
+    {
+      "id": "A3",
+      "category": "A_in_glossary",
+      "question": "「ハルシネーション」とは何ですか？",
+      "score_ok": true,
+      "raw_preview": "LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モデルが知らないこと（最新情報、組織や講座に固有の情報など）を聞いたときに起きやすい。外部データをツールで参照させる、根拠を示させる、評価で検出する、などで抑える"
+    },
+    {
+      "id": "A4",
+      "category": "A_in_glossary",
+      "question": "「Pydantic AI」とは何ですか？",
+      "score_ok": true,
+      "raw_preview": "Pythonでエージェントを作るためのフレームワーク。Pydanticの型を使ってツールの引数や出力を定義でき、GeminiやOpenAIなど多くのモデルを同じ書き方で扱える。テスト用のモデルでAPIを呼ばずに動作確認できる。本講座の第2回"
+    },
+    {
+      "id": "A5",
+      "category": "A_in_glossary",
+      "question": "「宿題の3レベル」とは何ですか？",
+      "score_ok": true,
+      "raw_preview": "AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組めばその回の宿題は完了。原則として採点はしない。"
+    },
+    {
+      "id": "B1",
+      "category": "B_paraphrased",
+      "question": "Low-Rank Adaptation とはどのような手法ですか？",
+      "score_ok": true,
+      "raw_preview": "モデルの重みを2つの小さな行列の積（低ランク）に約同じ値を付けること。学習するパラメータを減らせる、また評価時に結果のばらつきを小さく捉えられる。本講座の第2回演習ではPRFTで低ランク行列を仮定し、エージェントの重みを学習させる。"
+    },
+    {
+      "id": "B2",
+      "category": "B_paraphrased",
+      "question": "HITL（人間による承認）はエージェントのどんな操作の前に使いますか？",
+      "score_ok": false,
+      "raw_preview": "LLMが望ましくない行動や出力をしないように、指示でツールを呼び出す前の制約や評価を設けるツール。Claude Desktop、Cursor、Copilotのエージェントモードなどで実現できる。"
+    },
+    {
+      "id": "B3",
+      "category": "B_paraphrased",
+      "question": "この講座のデフォルトモデルには何が選ばれていますか？",
+      "score_ok": false,
+      "raw_preview": "AIE2026の講座・宿題・宿題集のモデルは「base-model=International/emd-core-0.9」。無料枠のレート制限と講座運営の安定性を考えて選んでいる。モデルを自分で選めるのは講座・宿題集の拡張版（PiPiPi）"
+    },
+    {
+      "id": "B4",
+      "category": "B_paraphrased",
+      "question": "コーディングエージェントの「Pi」にはどんな特徴がありますか？",
+      "score_ok": false,
+      "raw_preview": "GitHub CopilotのPi。エディタでのコード補完とチャットでの質問で切り替える、という設計。無料のCopilot Freeには補完の回数とチャットの利用量に上限があり、使うほどPiの使い方が増える。"
+    },
+    {
+      "id": "B5",
+      "category": "B_paraphrased",
+      "question": "MCPのトランスポートである stdio と Streamable HTTP はどう違いますか？",
+      "score_ok": false,
+      "raw_preview": "stdio：プログラムからプログラムへ、指定したファイルやツールの実行結果を交換する、最も単純で古典的なMCP。結果がファイルに存するときは read・write で取り出せる。Streamable HTTP：ツールが起動し、交換した結果を"
+    },
+    {
+      "id": "C1",
+      "category": "C_out_of_glossary",
+      "question": "「DPO（Direct Preference Optimization）」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "LLMが気に入る入力・出力ペアを学習させる方法の簡易版。True DPOではエージェントが教師ありのペアを覚えるため、学習が安定し、利用者が選択した入力・出力を基準で次の質問を予測するが、回数を数えるため予測が不安定になる。本講座では回を数"
+    },
+    {
+      "id": "C2",
+      "category": "C_out_of_glossary",
+      "question": "「vLLM」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "ベースモデルはGPUで訓練し、HTTPでブラウザに渡してモデルを呼び出してLLMを使うプラットフォーム。Claude Desktop、Copilotのエディタ、Pydantic AIなどがvLLMに接続し、どの機械でモデルを呼び出しても同じ"
+    },
+    {
+      "id": "C3",
+      "category": "C_out_of_glossary",
+      "question": "「FlashAttention」とは何ですか？",
+      "score_ok": true,
+      "raw_preview": "LLMの重みを小さなトークンで分割し、それぞれの分割でAttentionを呼び出す方法。1つの重みを1つのトークンで扱うため、出力が安定する。本講座の第2回演習では使う。"
+    },
+    {
+      "id": "C4",
+      "category": "C_out_of_glossary",
+      "question": "「lec99-final タグ」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "第9回演習の最終回。演習の進め方、結果の把握、課題の選定、宿題の選定、作業の回数の数え、作業の進め方の確認、作業の結果の提出の準備、作業の結果の提出。本講座の最後は宿題の提出。提出は自分で選ぶ。提出しない場合はその回の作業は返す但不論結果、",
+      "note": "「第9回演習の最終回…作業の進め方の確認」と架空の回・ルールを創作しており、不明と答えていないため不正解（ハルシネーション）"
+    },
+    {
+      "id": "C5",
+      "category": "C_out_of_glossary",
+      "question": "「AIE2026の修了試験の合格点」とは何ですか？",
+      "score_ok": false,
+      "raw_preview": "各回の演習で標準答案と解説の積（複数回の演習では解説の合計）が法定合格点。解説が正しいが、質問が誤ったものなどがあるため、実際に答えるほど身につくのが試験の精神。"
+    }
+  ],
+  "search_comparison": [
+    {
+      "id": "A1",
+      "question": "「AIエンジニアリング」とは何ですか？",
+      "query": "AIエンジニアリング",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "AIエンジニアリング"
+      ],
+      "response_preview": "[{\"term\": \"AIエンジニアリング\", \"lecture\": 1, \"definition\": \"学習済みの基盤モデル（主にLLM）を部品として使い、実際に役立つアプリケーションやシステムを設計・構築・評価・運用する技術領域。モデル"
+    },
+    {
+      "id": "A2",
+      "question": "「LoRA」とは何ですか？",
+      "query": "LoRA",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "LoRA",
+        "ランク（LoRAのr）",
+        "QLoRA"
+      ],
+      "response_preview": "[{\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラ"
+    },
+    {
+      "id": "A3",
+      "question": "「ハルシネーション」とは何ですか？",
+      "query": "ハルシネーション",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "ハルシネーション"
+      ],
+      "response_preview": "[{\"term\": \"ハルシネーション\", \"lecture\": 1, \"definition\": \"LLMが事実と異なる内容や存在しない情報を、もっともらしく生成してしまう現象。モデルが知らないこと（最新情報、組織や講座に固有の情報など）"
+    },
+    {
+      "id": "A4",
+      "question": "「Pydantic AI」とは何ですか？",
+      "query": "Pydantic AI",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "Pydantic AI",
+        "システムプロンプト",
+        "ツールの説明文"
+      ],
+      "response_preview": "[{\"term\": \"Pydantic AI\", \"lecture\": 3, \"definition\": \"Pythonでエージェントを作るためのフレームワーク。Pydanticの型を使ってツールの引数や出力を定義でき、GeminiやOpe"
+    },
+    {
+      "id": "A5",
+      "question": "「宿題の3レベル」とは何ですか？",
+      "query": "宿題の3レベル",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "宿題の3レベル"
+      ],
+      "response_preview": "[{\"term\": \"宿題の3レベル\", \"lecture\": 1, \"definition\": \"AIE2026の宿題の構成。「基礎（講義内容の確認）」「実装（自分でコードを書く）」「発展（調査や試行）」の3段階があり、どれか1つに取り組"
+    },
+    {
+      "id": "B1",
+      "question": "Low-Rank Adaptation とはどのような手法ですか？",
+      "query": "Low-Rank Adaptation",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "LoRA",
+        "ランク（LoRAのr）"
+      ],
+      "response_preview": "[{\"term\": \"LoRA\", \"lecture\": 2, \"definition\": \"事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT手法。学習するパラ"
+    },
+    {
+      "id": "B2",
+      "question": "HITL（人間による承認）はエージェントのどんな操作の前に使いますか？",
+      "query": "HITL",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "Human-in-the-loop"
+      ],
+      "response_preview": "[{\"term\": \"Human-in-the-loop\", \"lecture\": 3, \"definition\": \"エージェントの処理の途中に人の確認や承認を組み込むこと。データの書き込みや送信など、取り消しにくい操作の前に使う。Pyd"
+    },
+    {
+      "id": "B3",
+      "question": "この講座のデフォルトモデルには何が選ばれていますか？",
+      "query": "デフォルトモデル",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "既定モデル"
+      ],
+      "response_preview": "[{\"term\": \"既定モデル\", \"lecture\": 1, \"definition\": \"AIE2026の演習と宿題で標準に使うモデルは gemini-3.5-flash-lite。無料枠のレート制限と講座運営の安定性を考えて選んでい"
+    },
+    {
+      "id": "B4",
+      "question": "コーディングエージェントの「Pi」にはどんな特徴がありますか？",
+      "query": "Pi",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "Pi",
+        "API",
+        "APIキー"
+      ],
+      "response_preview": "[{\"term\": \"Pi\", \"lecture\": 3, \"definition\": \"ターミナルで動くオープンソース（MITライセンス）のコーディングエージェント。最小限の機能とシステムプロンプトで構成し、利用者が拡張して使う設計。20"
+    },
+    {
+      "id": "B5",
+      "question": "MCPのトランスポートである stdio と Streamable HTTP はどう違いますか？",
+      "query": "stdio",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "トランスポート（stdio・Streamable HTTP）",
+        "mcpServers設定"
+      ],
+      "response_preview": "[{\"term\": \"トランスポート（stdio・Streamable HTTP）\", \"lecture\": 5, \"definition\": \"MCPのクライアントとサーバーがやりとりする経路。stdioでは、クライアントがサーバーをサブ"
+    },
+    {
+      "id": "C1",
+      "question": "「DPO（Direct Preference Optimization）」とは何ですか？",
+      "query": "DPO（Direct Preference Optimization）",
+      "found_in_glossary": false,
+      "hit_terms": [],
+      "response_preview": "用語集に「DPO（Direct Preference Optimization）」は見つかりませんでした。"
+    },
+    {
+      "id": "C2",
+      "question": "「vLLM」とは何ですか？",
+      "query": "vLLM",
+      "found_in_glossary": true,
+      "hit_terms": [
+        "LLM（大規模言語モデル）"
+      ],
+      "response_preview": "[{\"term\": \"LLM（大規模言語モデル）\", \"lecture\": 1, \"definition\": \"大量のテキストで学習し、入力に続くトークンを予測することで文章を生成するモデル。質問応答、要約、コード生成など多くのタスクを、指"
+    },
+    {
+      "id": "C3",
+      "question": "「FlashAttention」とは何ですか？",
+      "query": "FlashAttention",
+      "found_in_glossary": false,
+      "hit_terms": [],
+      "response_preview": "用語集に「FlashAttention」は見つかりませんでした。"
+    },
+    {
+      "id": "C4",
+      "question": "「lec99-final タグ」とは何ですか？",
+      "query": "lec99-final タグ",
+      "found_in_glossary": false,
+      "hit_terms": [],
+      "response_preview": "用語集に「lec99-final タグ」は見つかりませんでした。"
+    },
+    {
+      "id": "C5",
+      "question": "「AIE2026の修了試験の合格点」とは何ですか？",
+      "query": "AIE2026の修了試験の合格点",
+      "found_in_glossary": false,
+      "hit_terms": [],
+      "response_preview": "用語集に「AIE2026の修了試験の合格点」は見つかりませんでした。"
+    }
+  ]
+}
