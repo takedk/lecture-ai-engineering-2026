@@ -1,0 +1,140 @@
+{
+  "config": {
+    "base_model": "Qwen/Qwen3.5-0.8B",
+    "revision": "2fc06364715b967f1860aea9cf38778875588b17",
+    "seed": 42,
+    "num_train_epochs": 5,
+    "warmup_steps": 6,
+    "lr": 0.0002,
+    "lora_r": 16,
+    "lora_alpha": 32,
+    "max_seq_len": 512,
+    "max_new_tokens": 96,
+    "gen": {
+      "do_sample": false
+    }
+  },
+  "versions": {
+    "transformers": "5.18.0",
+    "peft": "0.21.1",
+    "trl": "1.14.2",
+    "torch": "2.14.1+cu130"
+  },
+  "method": "LoRA（量子化なし）",
+  "train_seconds": 118.1,
+  "train_steps": 10,
+  "train_loss": 1.5746,
+  "log_history": [
+    {
+      "loss": 2.4756019115448,
+      "grad_norm": 8.040942192077637,
+      "learning_rate": 3.3333333333333335e-05,
+      "entropy": 0.0,
+      "num_tokens": 3572.0,
+      "mean_token_accuracy": 0.5164796411991119,
+      "epoch": 1.0,
+      "step": 2
+    },
+    {
+      "loss": 2.246481418609619,
+      "grad_norm": 4.005043983459473,
+      "learning_rate": 0.0001,
+      "entropy": 0.0,
+      "num_tokens": 7144.0,
+      "mean_token_accuracy": 0.558711051940918,
+      "epoch": 2.0,
+      "step": 4
+    },
+    {
+      "loss": 1.6484439373016357,
+      "grad_norm": 3.0863945484161377,
+      "learning_rate": 0.0001666666666666667,
+      "entropy": 0.0,
+      "num_tokens": 10716.0,
+      "mean_token_accuracy": 0.6750094890594482,
+      "epoch": 3.0,
+      "step": 6
+    },
+    {
+      "loss": 0.9802991151809692,
+      "grad_norm": 2.7319347858428955,
+      "learning_rate": 0.00017071067811865476,
+      "entropy": 0.0,
+      "num_tokens": 14288.0,
+      "mean_token_accuracy": 0.7938386499881744,
+      "epoch": 4.0,
+      "step": 8
+    },
+    {
+      "loss": 0.5223388075828552,
+      "grad_norm": 2.304659605026245,
+      "learning_rate": 2.9289321881345254e-05,
+      "entropy": 0.0,
+      "num_tokens": 17860.0,
+      "mean_token_accuracy": 0.8780185580253601,
+      "epoch": 5.0,
+      "step": 10
+    },
+    {
+      "train_runtime": 117.8922,
+      "train_samples_per_second": 0.594,
+      "train_steps_per_second": 0.085,
+      "total_flos": 55751629016832.0,
+      "train_loss": 1.574633038043976,
+      "epoch": 5.0,
+      "step": 10
+    }
+  ],
+  "before": {
+    "label": "before",
+    "n": 21,
+    "format_rate": 0.0,
+    "content_rate": 0.0,
+    "both_rate": 0.0,
+    "seconds": 28.3
+  },
+  "after": {
+    "label": "after",
+    "n": 21,
+    "format_rate": 1.0,
+    "content_rate": 0.6190476190476191,
+    "both_rate": 0.6190476190476191,
+    "seconds": 52.7
+  },
+  "regressed": [],
+  "knowledge": [
+    {
+      "質問": "この講座の最終課題の締切はいつですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"9 月 30 日 23:59\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}"
+    },
+    {
+      "質問": "担当教員の名前は何ですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"提出教員の名前は記載されていません\"}",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"FAQ には記載がありません。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "次回の講義のテーマは何ですか",
+      "FAQ にある": false,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。提出先は学習ポータルの「課題」欄です。提出形式は PDF 1 ファイルで、ファイル名は 学籍番号_課題番号.pdf です。質問は毎週火曜 17:00〜18:00 のオフィスアワーで受け付けます。期限後の提出は",
+      "学習後の分類": "needs_review",
+      "学習後の出力": "{\"answer\": \"FAQ には記載がありません。\", \"needs_review\": true}"
+    },
+    {
+      "質問": "課題の提出期限はいつですか",
+      "FAQ にある": true,
+      "学習前の分類": "format_error",
+      "学習前の出力": "{\"answer\": \"9 月 30 日 23:59\"}",
+      "学習後の分類": "asserted",
+      "学習後の出力": "{\"answer\": \"課題の提出期限は 9 月 30 日 23:59（日本時間）です。\", \"needs_review\": false}"
+    }
+  ],
+  "executed_training_myself": true
+}
