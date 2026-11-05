@@ -1,0 +1,65 @@
+{
+  "question": "LoRAとQLoRAの違いは？",
+  "runs": [
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1514,
+      "output_tokens": 194,
+      "output": "LoRAとQLoRAの違いは以下の通りです。\n\n* **LoRA（Low-Rank Adaptation）**\n  事前学習済みの重みを固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT（Parameter-Efficient Fine-Tuning）手法です。学習するパラメータが少なく、学習結果（アダプタ）も小さいファイルで保存できます。\n\n* **QLoRA**\n  ベースモデルの重みを4ビットなどに量子化してメモリを節約したうえで、LoRAによるファインチューニングを行う手法です。これにより、より大きなモデルを小さなGPU環境でも扱えるようになります。\n\n（第2回）"
+    },
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1514,
+      "output_tokens": 219,
+      "output": "LoRAとQLoRAの違いは、ベースモデルの重みをそのまま使うか、量子化してメモリを節約するかにあります。\n\n* **LoRA（Low-Rank Adaptation）**\n  事前学習済みの重みは固定したまま、重みの更新分を小さな低ランク行列（2つの行列の積）で表し、その部分だけを学習するPEFT（Parameter-Efficient Fine-Tuning）手法です。学習するパラメータ数と保存サイズを大幅に削減できます。\n\n* **QLoRA（Quantized LoRA）**\n  ベースモデルの重みを4ビットなどに**量子化**（軽量化）してメモリをさらに節約したうえで、LoRAによるファインチューニングを行う手法です。これにより、より大きなモデルを小さなGPU環境でも扱えるようになります。\n\n関係する回：第2回"
+    },
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1514,
+      "output_tokens": 210,
+      "output": "**LoRA**と**QLoRA**の主な違いは、ベースモデルの重みをそのまま使うか、量子化してメモリを大幅に節約するか点にあります。\n\n* **LoRA（Low-Rank Adaptation）**\n  事前学習済みの重みを固定したまま、重みの更新分を2つの小さな行列（低ランク行列）の積で表し、その小さな行列だけを学習するPEFT手法です。学習パラメータやメモリを大幅に削減できます。\n* **QLoRA（Quantized LoRA）**\n  ベースモデルの重みを4ビットなどに**量子化**してメモリをさらに節約した状態で、LoRAによる学習を行う手法です。これにより、より大きなモデルを比較的小さなGPUでも扱えるようになります。\n\n関係する回：第2回"
+    }
+  ]
+}

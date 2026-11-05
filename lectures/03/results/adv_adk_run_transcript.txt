@@ -1,0 +1,21 @@
+Log setup complete: /tmp/agents_log/agent.20261105_140111.log
+To access latest log: tail -F /tmp/agents_log/agent.latest.log
+Running agent glossary_agent, type exit to exit.
+[user]: [glossary_agent]: AIE2026の講座における「3レベル」とは、宿題の構成を表す以下の3つの段階のことです。
+
+1. **基礎**：講義内容の確認
+2. **実装**：自分でコードを書く
+3. **発展**：調査や試行
+
+この3レベルのうち、**どれか1つ**に取り組めばその回の宿題は完了となります。原則として採点は行われません。
+
+（関連回：第1回）
+[user]: [glossary_agent]: それでは、第2回の内容から確認問題を出題します！
+
+**【問題】**
+「学習率」の意味は？
+
+（答えを考えて教えてくださいね。正解かどうかをお伝えします！）
+
+（関連回：第2回）
+[user]: 
