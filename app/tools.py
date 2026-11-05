@@ -5,6 +5,9 @@
 """
 
 import json
+import random
+import re
+from datetime import datetime
 from functools import cache
 from pathlib import Path
 
@@ -77,3 +80,55 @@ def get_lecture_summary(lecture: int) -> str:
         available = sorted(p.stem for p in (DATA_DIR / "lectures").glob("*.md"))
         return f"第{lecture}回の要点はまだありません。用意されている回: {', '.join(available)}"
     return path.read_text(encoding="utf-8")
+
+
+def make_quiz(lecture: int) -> str:
+    """指定した回（1始まりの整数）の用語集から確認問題を1問作り、問題と答えを返す。
+
+    「第2回の確認問題を出して」「復習のクイズを1問」のように、確認問題や小テストを
+    求められたときに使う。lecture には対象の回の番号を入れる（例: 2）。
+    返り値は JSON で、question（問題文）と answer（正解）と term（出題した用語）を持つ。
+    出題するときは answer をすぐには見せず、利用者が答えてから示すこと。
+    """
+    candidates = [e for e in load_glossary() if e["lecture"] == lecture]
+    if not candidates:
+        available = sorted({e["lecture"] for e in load_glossary()})
+        return (
+            f"第{lecture}回の用語は用語集にありません。"
+            f"出題できる回: {', '.join(f'第{n}回' for n in available)}"
+        )
+    entry = random.choice(candidates)
+    return json.dumps(
+        {
+            "question": f"「{entry['term']}」の意味は？",
+            "answer": entry["definition"],
+            "term": entry["term"],
+            "lecture": lecture,
+        },
+        ensure_ascii=False,
+    )
+
+
+LOG_DIR = Path(__file__).resolve().parent.parent / "learning_log"
+
+
+def save_learning_log(title: str, content: str, lecture: int | None = None) -> str:
+    """学習の記録（学んだこと・つまずいた点・次にやること）を learning_log/ フォルダに Markdown で保存する。
+
+    利用者が「今日の学びを記録して」「メモを保存して」のように、記録や保存を
+    はっきり頼んだときだけ使う。頼まれていないのに自分から保存しない。
+    title には記録の短い見出し、content には保存する本文（Markdown）を入れる。
+    lecture には関係する回の番号を入れる（分からなければ省略する）。
+    保存はファイルを書き込む操作なので、実行前に利用者の承認が必要になる。
+    """
+    title = title.strip() or "学習の記録"
+    LOG_DIR.mkdir(parents=True, exist_ok=True)
+    now = datetime.now()
+    # ファイル名に使えない文字を「-」に置き換え、長すぎる見出しは切る
+    safe = re.sub(r'[\\/:*?"<>|\s]+', "-", title).strip("-")[:40] or "log"
+    path = LOG_DIR / f"{now:%Y%m%d-%H%M%S}-{safe}.md"
+    header = f"# {title}\n\n- 日時: {now:%Y-%m-%d %H:%M}\n"
+    if lecture is not None:
+        header += f"- 関係する回: 第{lecture}回\n"
+    path.write_text(f"{header}\n{content.strip()}\n", encoding="utf-8")
+    return f"保存しました: learning_log/{path.name}"

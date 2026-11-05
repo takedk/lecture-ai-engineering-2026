@@ -1,0 +1,21 @@
+                 pydantic-ai v2.57.0 • Python 3.13.5
+      / \
+     /   \       agent: target • model: google:gemini-3.5-flash-lite • tools: 2 • capabilities: 0
+   /___.___\
+  /    |    \    observability: off — see every model and tool call live, with cost
+/      |      \    set it up free with Logfire and a GitHub login: https://pydantic.dev/ai-setup.md
+`---.._|_..---'    or use any OpenTelemetry backend: https://pydantic.dev/docs/ai/logfire/#otel
+
+                 goes away once observability is on — or PYDANTIC_AI_NO_BANNER=1
+[model] gemini-3.5-flash-lite
+AIE2026の宿題における「3レベル」とは、宿題の難易度や取り組み方の構成のことです。
+
+具体的には以下の3段階に分かれています。
+
+1. **基礎**：講義内容の確認
+2. **実装**：自分でコードを書く
+3. **発展**：調査や試行
+
+いずれか1つのレベルに取り組めば、その回の宿題は完了となります（原則として採点は行いません）。ご自身の理解度や目的に合わせて選んでみてくださいね。
+
+関係する回：第1回

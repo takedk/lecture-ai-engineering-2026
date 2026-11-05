@@ -1,0 +1,14 @@
+[model] gemini-3.5-flash-lite
+第2回から確認問題を1問出します！
+
+**問題：**
+「PEFT」の意味は何でしょうか？
+
+（答えを考えて教えてくださいね。分からなければヒントを出します！）
+
+関連：第2回
+
+--- trace ---
+[tool call]   make_quiz({'lecture': 2})
+[tool return] make_quiz -> {"question": "「PEFT」の意味は？", "answer": "モデルの全パラメータではなく、ごく一部や追加した小さなパラメータだけを学習する手法の総称。必要なGPUメモリと保存容量を大きく減らせる。LoRAが代表例。", "…
+[usage] RunUsage(cost=Decimal('0.0004715'), details={'text_prompt_tokens': 1055}, input_text_tokens=1055, input_tokens=1055, output_tokens=62, requests=2, tool_calls=1)
