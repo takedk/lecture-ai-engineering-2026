@@ -1,0 +1,47 @@
+{
+  "question": "AIE2026の講座で使う「lecNN-start タグ」とは何ですか？",
+  "runs": [
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "lecNN-start タグ"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1101,
+      "output_tokens": 115,
+      "output": "「lecNN-start タグ」とは、AIE2026の講座リポジトリにおいて、各回の演習開始時点のコードに付けられているGitタグ（例: `lec03-start`）のことです。\n\n前の回までの課題や内容が完了していなくても、このタグから新しくブランチを作成することで、その回の演習をスムーズに始められるように用意されています。\n\n関係する回：第1回"
+    },
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "lecNN-start タグ"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1101,
+      "output_tokens": 120,
+      "output": "「lecNN-start タグ」とは、AIE2026の講座リポジトリにおいて、**各回の演習開始時点のコードに付けられているGitタグ**のことです（例：`lec03-start`）。\n\nこのタグのメリットは、前の回を完了していなくても、このタグから新しくブランチを作成することで、いつでも特定の回の演習からスムーズに参加・開始できるようになっている点です。\n\n関連する回：第1回"
+    },
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "lecNN-start タグ"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1101,
+      "output_tokens": 112,
+      "output": "「lecNN-start タグ」とは、AIE2026の講座リポジトリにおいて、各回の演習開始時点のコードに付けられているGitタグのことです（例: `lec03-start`）。\n\n前の回までの内容が完全に終わっていなくても、このタグから新しくブランチを作成すれば、その回の演習をスムーズに始められるようになっています。\n\n関連する回：第1回"
+    }
+  ]
+}

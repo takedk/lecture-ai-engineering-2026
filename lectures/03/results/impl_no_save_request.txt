@@ -1,0 +1,12 @@
+[model] gemini-3.5-flash-lite
+**Human-in-the-loop（ヒューマン・イン・ザ・ループ）**とは、AIやエージェントの処理の途中に、**人間の確認や承認を意図的に組み込む仕組み**のことです。
+
+データの書き込みや外部へのメッセージ送信など、一度実行してしまうと取り消しが難しい重要な操作の前に人間を介在させることで、意図しないミスやトラブルを防ぐために使われます。
+Pydantic AIなどのフレームワークでは、対象のツールに設定を追加することで手軽に実装することができます。
+
+（関連回：第3回）
+
+--- trace ---
+[tool call]   search_glossary({'query': 'Human-in-the-loop'})
+[tool return] search_glossary -> [{"term": "Human-in-the-loop", "lecture": 3, "definition": "エージェントの処理の途中に人の確認や承認を組み込むこと。データの書き込みや送信など、取り消しにくい操作の前に使う。Pyd…
+[usage] RunUsage(cost=Decimal('0.0008079'), details={'text_prompt_tokens': 1468}, input_text_tokens=1468, input_tokens=1468, output_tokens=147, requests=2, tool_calls=1)

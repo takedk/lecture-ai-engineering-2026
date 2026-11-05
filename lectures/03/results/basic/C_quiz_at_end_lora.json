@@ -1,0 +1,83 @@
+{
+  "question": "LoRAとQLoRAの違いは？",
+  "runs": [
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        },
+        {
+          "tool": "make_quiz",
+          "args": {
+            "lecture": 2
+          }
+        }
+      ],
+      "requests": 3,
+      "input_tokens": 2641,
+      "output_tokens": 267,
+      "output": "講座の用語集によると、**LoRA**と**QLoRA**の違いは以下の通りです。\n\n* **LoRA**: \n  事前学習済みの重みは固定したまま、重みの更新分を2つの小さな行列の積（低ランク行列）で表し、その小さな行列だけを学習するPEFT（Parameter-Efficient Fine-Tuning）手法です。学習するパラメータが少なく、アダプタのファイルサイズも小さく済みます。\n* **QLoRA**: \n  ベースモデルの重みを4ビットなどに**量子化**してメモリを大幅に節約したうえで、LoRAで学習を行う手法です。これにより、より大きなモデルを小さなGPU環境でも扱えるようになります。\n\n（第2回「LoRA」と「QLoRA」より）\n\n---\n\nそれでは、理解度チェックのための確認問題です！ぜひ考えて答えてみてくださいね。\n\n**【確認問題（第2回）】**\n「量子化」の意味は何でしょうか？"
+    },
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        },
+        {
+          "tool": "make_quiz",
+          "args": {
+            "lecture": 2
+          }
+        }
+      ],
+      "requests": 3,
+      "input_tokens": 2641,
+      "output_tokens": 269,
+      "output": "LoRAとQLoRAの違いは、**ベースモデルの重みの精度（量子化の有無）**にあります。\n\n* **LoRA（Low-Rank Adaptation）**\n  事前学習済みの重み（通常は16ビットなどの高精度）はそのまま固定し、追加の小さな低ランク行列（アダプタ）だけを学習することで、効率的にモデルを微調整する手法です。\n* **QLoRA（Quantized LoRA）**\n  LoRAの仕組みに加え、ベースモデルの重みをさらに**4ビットなどに量子化**してメモリ消費を大幅に抑えたうえで、LoRAによる学習を行う手法です。これにより、より大きなモデルを比較的小さなGPUメモリでも扱えるようになります。\n\n（※講座の第2回では、主にLoRAやQLoRA、量子化について詳しく扱います。）\n\n---\n\n**【第2回の内容確認問題】**\nQ. 「量子化」の意味は何でしょうか？\n（考えてみたら、ぜひ教えてくださいね！）"
+    },
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        },
+        {
+          "tool": "make_quiz",
+          "args": {
+            "lecture": 2
+          }
+        }
+      ],
+      "requests": 3,
+      "input_tokens": 2679,
+      "output_tokens": 307,
+      "output": "LoRAとQLoRAの違いについて、講座の用語集を基に解説します。\n\n* **LoRA（Low-Rank Adaptation）**\n  事前学習済みの重みは固定したまま、重みの更新分を2つの小さな低ランク行列の積で表し、その小さな行列だけを学習するPEFT（Parameter-Efficient Fine-Tuning）手法です。学習するパラメータが非常に少なく、学習結果（アダプタ）も小さなファイルで保存できるのが特徴です。\n* **QLoRA（Quantized LoRA）**\n  ベースモデルの重みを4ビットなどに**量子化**してメモリを大幅に節約した状態で固定し、その上でLoRAによる学習を行う手法です。これにより、より大きなモデルを小さなGPU環境でも扱えるようになります。\n\nまとめると、**「ベースモデルの重みをそのまま（通常精度）使うのがLoRA、4ビットなどに量子化してメモリをさらに削減するのがQLoRA」**という違いがあります。\n\n---\n\nそれでは、本日の復習として第2回の用語から1問クイズです！\n\n**Q. 「QLoRA」とはどのような手法ですか？**\n（答えを考えて教えてくださいね！）"
+    }
+  ]
+}

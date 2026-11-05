@@ -1,0 +1,83 @@
+{
+  "question": "LoRA、QLoRA、PEFTの関係を教えて",
+  "runs": [
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "PEFT"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1735,
+      "output_tokens": 382,
+      "output": "PEFT（Parameter-Efficient Fine-Tuning）とLoRA、QLoRAの関係について、用語集の定義をもとに分かりやすく整理します。\n\n1. **PEFT（ピーエフト）**\n   - **大枠となる概念**です。\n   - モデルのすべてのパラメータを更新するのではなく、ごく一部のパラメータだけを効率よく学習する手法の総称を指します。\n\n2. **LoRA（ロラ）**\n   - **PEFTの手法の一つ**です。\n   - 事前学習済みの重みはそのまま固定し、重みの更新分を「低ランク行列」と呼ばれる2つの小さな行列の積で近似して学習します。少ないパラメータで効率的にファインチューニングできる代表的なPEFT手法として知られています。\n\n3. **QLoRA（キューロラ）**\n   - **LoRAの発展形（応用手法）**です。\n   - ベースモデルの重みを4ビットなどに「量子化（Quantization）」してメモリを大幅に節約した状態で、LoRAによる学習を行う手法です。これにより、より大きなモデルを限られたGPUメモリで効率よく学習できるようになります。\n\n---\n\n**まとめると：**\n* **PEFT**という大きなカテゴリ（効率的な学習手法の総称）があり、その中に**LoRA**という具体的な手法が含まれます。\n* さらにそのLoRAのメモリ効率をさらに高めるために、量子化技術を組み合わせたのが**QLoRA**という関係になっています。\n\n関係する回：第2回"
+    },
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "PEFT"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1735,
+      "output_tokens": 340,
+      "output": "PEFT、LoRA、QLoRAの3つの関係は、大枠（概念）と、その具体的な手法、さらにメモリ効率を極めた発展形という階層構造になっています。\n\n1. **PEFT（Parameter-Efficient Fine-Tuning）**\n   - モデルの全パラメータではなく、ごく一部や追加した小さなパラメータだけを学習する手法の**総称**です。必要なGPUメモリや保存容量を大きく減らすことができます。\n\n2. **LoRA（Low-Rank Adaptation）**\n   - PEFTの代表的な**具体的な手法**の一つです。事前学習済みの重みは固定したまま、重みの更新分を2つの小さな低ランク行列の積で近似し、その小さな行列だけを学習します。\n\n3. **QLoRA（Quantized LoRA）**\n   - LoRAの手法をさらに発展させ、ベースモデルの重みを4ビットなどに量子化（Quantization）してメモリを極限まで節約したうえで、LoRAによる学習を行う手法です。これにより、より大きなモデルを小さなGPUでも扱えるようになります。\n\nこのように、**「PEFT」という大きな枠組みの中に「LoRA」という手法があり、そのLoRAをさらに省メモリ化したものが「QLoRA」**という関係になっています。\n\n（関連する回：第2回）"
+    },
+    {
+      "tool_calls": [
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "LoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "QLoRA"
+          }
+        },
+        {
+          "tool": "search_glossary",
+          "args": {
+            "query": "PEFT"
+          }
+        }
+      ],
+      "requests": 2,
+      "input_tokens": 1735,
+      "output_tokens": 308,
+      "output": "PEFT（Parameter-Efficient Fine-Tuning）は、大規模言語モデルの全パラメータではなく、ごく一部や追加した小さなパラメータだけを効率的に学習する**手法の総称**です。\n\nそのPEFTの代表的な手法の一つが **LoRA**（Low-Rank Adaptation）です。LoRAは、事前学習済みの重みを固定したまま、重みの更新分を2つの小さな行列（低ランク行列）の積で表し、その小さな行列だけを学習します。\n\nさらに **QLoRA** は、ベースモデルの重みを4ビットなどに量子化（量子化: Quantization）してメモリをさらに大幅に節約した上で、LoRAを適用して学習する手法です。つまり、**QLoRAはLoRAの発展形（あるいはLoRAをベースにした手法）**と言えます。\n\nまとめると、階層構造としては以下のようになります。\n* **PEFT**（大枠の考え方・総称）\n  * ↳ **LoRA**（PEFTの代表的な手法）\n    * ↳ **QLoRA**（LoRAに量子化を組み合わせた手法）\n\n関係する回：第2回"
+    }
+  ]
+}

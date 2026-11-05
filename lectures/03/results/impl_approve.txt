@@ -1,0 +1,16 @@
+[model] gemini-3.5-flash-lite
+
+[承認待ち] save_learning_log
+  lecture: 3
+  content: - ツールの説明文を変えると、LLMからの呼ばれ方が変わることを学んだ。
+- 1つの質問に対してLLMを複数回呼ぶ仕組みを確認した。
+- 次にやること: ADKでも同じエージェントを作ってみる。
+  title: 第3回の学習記録
+この内容で実行してよいですか？ [y/N]: 第3回の学習記録を保存しました。
+
+関係する回：第3回
+
+--- trace ---
+[tool call]   save_learning_log({'lecture': 3, 'content': '- ツールの説明文を変えると、LLMからの呼ばれ方が変わることを学んだ。\n- 1つの質問に対してLLMを複数回呼ぶ仕組みを確認した。\n- 次にやること: ADKでも同じエージェントを作ってみる。', 'title': '第3回の学習記録'})
+[tool return] save_learning_log -> 保存しました: learning_log/20261105-134850-第3回の学習記録.md…
+[usage] RunUsage(cost=Decimal('0.0002960'), details={'text_prompt_tokens': 845}, input_text_tokens=845, input_tokens=845, output_tokens=17, requests=1, tool_calls=1)
