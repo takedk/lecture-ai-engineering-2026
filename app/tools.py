@@ -84,14 +84,15 @@ def get_lecture_summary(lecture: int) -> str:
 def search_materials(query: str) -> str:
     """第1〜3回の本講義資料を検索し、関連ページの本文・タイトル・ページ番号を返す。
 
-    queryに調べたい内容を指定する。
+    queryに調べたい内容を指定する。ヒットしたページに加え、同じ資料の前後1ページも返す。
+    source が search なら検索ヒット、previous / next なら前後ページ。
     """
     from google.genai.errors import APIError
     import sqlite3
     from app.retrieval import search
 
     try:
-        return json.dumps({"results": search(query)}, ensure_ascii=False)
+        return json.dumps({"results": search(query, include_adjacent=True)}, ensure_ascii=False)
     except (ValueError, FileNotFoundError, sqlite3.Error) as e:
         return json.dumps({"error": str(e), "results": []}, ensure_ascii=False)
     except APIError as e:
@@ -126,3 +127,21 @@ def search_graph(query: str) -> str:
         return json.dumps({"error": str(e)}, ensure_ascii=False)
     except APIError as e:
         return json.dumps({"error": api_error_message(e.code)}, ensure_ascii=False)
+
+
+def search_hybrid(query: str) -> str:
+    """資料を検索し、前後ページと、質問に出てくる用語と重なるグラフ先の本文を返す。
+
+    queryに調べたい内容を指定する。共通用語だけでつながった、質問と用語が重ならないページは含めない。
+    """
+    import sqlite3
+    from google.genai.errors import APIError
+    from app.retrieval import search_hybrid as search
+
+    try:
+        return json.dumps(search(query), ensure_ascii=False)
+    except (ValueError, OSError, sqlite3.Error) as e:
+        return json.dumps({"error": str(e)}, ensure_ascii=False)
+    except APIError as e:
+        return json.dumps({"error": api_error_message(e.code)}, ensure_ascii=False)
+
