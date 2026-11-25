@@ -46,3 +46,18 @@ def test_default_question_of_lecture1_is_answerable_from_glossary():
     assert "3レベル" in DEFAULT_QUESTION
     hits = json.loads(tools.search_glossary("3レベル"))
     assert hits[0]["term"] == "宿題の3レベル"
+
+
+def test_make_quiz_returns_question_and_answer():
+    quiz = json.loads(tools.make_quiz(2))
+    assert quiz["lecture"] == 2
+    assert quiz["term"]
+    assert quiz["question"]
+    assert quiz["answer"]
+
+
+def test_make_quiz_reports_out_of_range_lecture():
+    message = tools.make_quiz(99)
+    assert "第99回の用語は用語集にありません" in message
+    assert "出題できる回" in message
+    assert "第2回" in message
