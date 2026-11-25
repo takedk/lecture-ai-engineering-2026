@@ -8,6 +8,8 @@ import json
 
 import pytest
 from pydantic_ai.messages import ToolCallPart, ToolReturnPart
+from pydantic_ai.messages import ModelResponse, TextPart
+from pydantic_ai.models.function import FunctionModel
 from pydantic_ai.models.test import TestModel
 
 from app.mcp_agent import (
@@ -89,3 +91,57 @@ def test_config_mistakes_are_reported_in_words(tmp_path, text, expected):
     path.write_text(text, encoding="utf-8")
     with pytest.raises(ConfigError, match=expected):
         read_config(path)
+
+
+def test_glossary_server_exposes_homework_tools(tmp_path):
+    model = TestModel(call_tools=[])
+    build_mcp_agent(_glossary_only_config(tmp_path)).run_sync("ツール一覧", model=model)
+
+    offered = {t.name for t in model.last_model_request_parameters.function_tools}
+    assert {
+        "glossary_search_glossary",
+        "glossary_get_lecture_summary",
+        "glossary_make_quiz",
+    } <= offered
+
+
+def test_get_lecture_summary_comes_back_through_mcp(tmp_path):
+    def call_summary(messages, _info):
+        if len(messages) == 1:
+            return ModelResponse(parts=[ToolCallPart("glossary_get_lecture_summary", {"lecture": 2})])
+        return ModelResponse(parts=[TextPart("第2回の要点を確認しました")])
+
+    result = build_mcp_agent(_glossary_only_config(tmp_path)).run_sync(
+        "第2回では何を学びますか？", model=FunctionModel(call_summary)
+    )
+    returns = _parts(result, ToolReturnPart)
+    assert returns and returns[0].tool_name == "glossary_get_lecture_summary"
+    assert "第2回" in str(returns[0].content)
+
+
+def test_make_quiz_valid_and_out_of_range_through_mcp(tmp_path):
+    def call_valid_quiz(messages, _info):
+        if len(messages) == 1:
+            return ModelResponse(parts=[ToolCallPart("glossary_make_quiz", {"lecture": 2})])
+        return ModelResponse(parts=[TextPart("出題しました")])
+
+    valid_result = build_mcp_agent(_glossary_only_config(tmp_path)).run_sync(
+        "第2回のクイズを作って", model=FunctionModel(call_valid_quiz)
+    )
+    valid_returns = _parts(valid_result, ToolReturnPart)
+    assert valid_returns and valid_returns[0].tool_name == "glossary_make_quiz"
+    quiz = json.loads(valid_returns[0].content)
+    assert quiz["lecture"] == 2
+
+    def call_oob_quiz(messages, _info):
+        if len(messages) == 1:
+            return ModelResponse(parts=[ToolCallPart("glossary_make_quiz", {"lecture": 99})])
+        return ModelResponse(parts=[TextPart("第99回はありません")])
+
+    oob_result = build_mcp_agent(_glossary_only_config(tmp_path)).run_sync(
+        "第99回のクイズを作って", model=FunctionModel(call_oob_quiz)
+    )
+    oob_returns = _parts(oob_result, ToolReturnPart)
+    assert oob_returns and oob_returns[0].tool_name == "glossary_make_quiz"
+    assert "第99回の用語は用語集にありません" in str(oob_returns[0].content)
+    assert "出題できる回" in str(oob_returns[0].content)
